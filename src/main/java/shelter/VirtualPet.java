@@ -47,11 +47,8 @@ public class VirtualPet {
         thirst += 10;
     }
 
-    public void adopting() {
+    public void addPet() {
 
-    }
-
-    public void feeding() {
     }
 
     public void tick() {

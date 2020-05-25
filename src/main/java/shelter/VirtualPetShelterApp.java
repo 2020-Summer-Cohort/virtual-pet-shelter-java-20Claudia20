@@ -63,18 +63,19 @@ public class VirtualPetShelterApp {
                 shelterPets.actionGiveWaterToPets();
             } else if (userResponse == 3) {
                 System.out.println("You get to play with a dog. What furry friend would you like to play with?");
-                System.out.println("1." + pet1.getName() + pet1.getDesc());
-                System.out.println("2." + pet2.getName() + pet2.getDesc());
-                System.out.println("3." + pet3.getName() + pet3.getDesc());
-                System.out.println("4." + pet4.getName() + pet4.getDesc());
+                System.out.println("1. " + pet1.getName() + " the " + pet1.getDesc() + " German Shepperd.");
+                System.out.println("2. " + pet2.getName() + " the " + pet2.getDesc() + " Australian Terrier.");
+                System.out.println("3. " + pet3.getName() + " the " + pet3.getDesc() + " St. Bernard.");
+                System.out.println("4. " + pet4.getName() + " the " + pet4.getDesc() + " Siberian Husky");
             } else if (userResponse == 4){
                 System.out.println( "You have selected to adopt a lifelong companion." + "\n" +
                         "What furry friend would you like to give a new home to?");
-                System.out.println("1." + pet1.getName() + "the" + pet1.getDesc() + " German Shepperd.");
-                System.out.println("2." + pet2.getName() + "the" + pet2.getDesc() + "Australian Terrier .");
-                System.out.println("3." + pet3.getName() + "the" + pet3.getDesc() + "St.Bernard.");
-                System.out.println("4." + pet4.getName() + "the" + pet4.getDesc() + "Princess Siberian Husky.");
+                System.out.println("1. " + pet1.getName() + " the " + pet1.getDesc() + " German Shepperd.");
+                System.out.println("2. " + pet2.getName() + " the " + pet2.getDesc() + " Australian Terrier .");
+                System.out.println("3. " + pet3.getName() + " the " + pet3.getDesc() + " St.Bernard.");
+                System.out.println("4. " + pet4.getName() + " the " + pet4.getDesc() + " Siberian Husky.");
                 Scanner scanner1 = new Scanner(System.in);
+                  scanner.nextInt();
             } else if (userResponse == 5){
                 System.out.println("You have selected to intake a dog.Who's our new furry friend?");
                 // code to add the pet they are bringing in
@@ -84,7 +85,7 @@ public class VirtualPetShelterApp {
             else continue;
             break;
         }
-        System.out.println("New status updates on all our furry friends:");
+
 
     }
         }

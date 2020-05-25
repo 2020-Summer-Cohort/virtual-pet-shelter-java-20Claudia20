@@ -7,7 +7,8 @@ public class VirtualPetShelter {
 
     Map<String, VirtualPet> petMap = new HashMap<String, VirtualPet>();
 
-    public void addPet(VirtualPet pet) {petMap.put(pet.getName(), pet);
+    public void addPet(VirtualPet pet) {
+        petMap.put(pet.getName(), pet);
     }
 
     public void adoptPet(VirtualPet pet) {
