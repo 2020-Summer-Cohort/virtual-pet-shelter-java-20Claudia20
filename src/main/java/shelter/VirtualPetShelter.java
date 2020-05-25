@@ -11,8 +11,8 @@ public class VirtualPetShelter {
         petMap.put(pet.getName(), pet);
     }
 
-    public void adoptPet(VirtualPet pet) {
-        petMap.remove(pet.getName(), pet);
+    public void adoptPet(String petName) {
+        petMap.remove(petName);
     }
 
     public void actionFeedAllPets() {
