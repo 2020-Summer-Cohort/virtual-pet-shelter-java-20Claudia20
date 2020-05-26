@@ -20,11 +20,14 @@ public class VirtualPetShelterApp {
 
         //Welcome statement (do we need to move to a welcome method and call?)
         System.out.println("Welcome and thank you for volunteering at The Doggy Virtual Pet Shelter!");
-        System.out.println("Let's meet the dogs you will be working with.");
-        System.out.println(pet1.getName() + " is a " + pet1.getDesc() + " German Shepperd.");
-        System.out.println(pet2.getName() + " is a " + pet2.getDesc() + " Australian Terrier.");
-        System.out.println(pet3.getName() + " is a " + pet2.getDesc() + " St.Bernard.");
-        System.out.println(pet4.getName() + " is an " + pet4.getDesc() + " Princess Siberian Husky.");
+        System.out.println("Let's meet the dogs you will be working with." + "\n");
+        System.out.println(pet1.getName() + " is a " + pet1.getDescription() + " German Shepperd." + "\n");
+        System.out.println(pet2.getName() + " is a " + pet2.getDescription() + " Australian Terrier." + "\n");
+        System.out.println(pet3.getName() + " is a " + pet2.getDescription() + " St.Bernard." + "\n");
+        System.out.println(pet4.getName() + " is an " + pet4.getDescription() + " Princess Siberian Husky." + "\n");
+
+        // begin game loop
+        while (true) {
 
             //current status
             System.out.println("This is the status of our furry friends:");
@@ -35,8 +38,8 @@ public class VirtualPetShelterApp {
             System.out.println(pet3.getName() + "   |" + pet3.getHunger() + "     |" + pet3.getThirst() + "     |" + pet3.getBoredom());
             System.out.println(pet4.getName() + "    |" + pet4.getHunger() + "     |" + pet4.getThirst() + "     |" + pet4.getBoredom());
 
-            //user selection
-            System.out.println("What would you like to do?");
+
+            System.out.println("\n" + "What would you like to do?");
             System.out.println("1. Feed all the dogs");
             System.out.println("2. Give water to all the dogs");
             System.out.println("3. Play with a furry friend");
@@ -44,63 +47,54 @@ public class VirtualPetShelterApp {
             System.out.println("5. Admit a pet");
             System.out.println("6. Quit");
 
-            //use scanner to read user response
-            Scanner scanner = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);    //use scanner to read user response
 
-            // user 'int userResponse' to create a spot for users input
-
-            //begin game loop
-            while (true) {
-                System.out.println("What would you like to do?");
-                System.out.println("1. Feed all the dogs");
-                System.out.println("2. Give water to all the dogs");
-                System.out.println("3. Play with a furry friend");
-                System.out.println("4. Adopt a companion");
-                System.out.println("5. Admit a pet");
-                System.out.println("6. Quit");
-
-                int userResponse = scanner.nextInt();
-                scanner.nextLine();
-
-            //call to tick method in VirtualPetShelter
-            shelterPets.tickAll();
+            int userResponse = scanner.nextInt();      // 'int userResponse' to create a spot for users input
+            scanner.nextLine();
 
             //if statements to recognize userResponse & direct game on what to do based on user response
             if (userResponse == 1) {
-                System.out.println(" You have selected to feed all the dogs.");
+                System.out.println("You selected to give all the dogs their favorite ice cream treats.");
                 shelterPets.actionFeedAllPets();
             } else if (userResponse == 2) {
-                System.out.println(" You will give fresh water to all the dogs.");
+                System.out.println("You selected to give all the dogs some fresh iced water.");
                 shelterPets.actionGiveWaterToPets();
             } else if (userResponse == 3) {
                 System.out.println("You get to play with a dog. Which furry friend would you like to play with?");
-                System.out.println("1. " + pet1.getName() + " the " + pet1.getDesc() + " German Shepperd.");
-                System.out.println("2. " + pet2.getName() + " the " + pet2.getDesc() + " Australian Terrier.");
-                System.out.println("3. " + pet3.getName() + " the " + pet3.getDesc() + " St. Bernard.");
-                System.out.println("4. " + pet4.getName() + " the " + pet4.getDesc() + " Siberian Husky");
+                System.out.println("1. " + pet1.getName() + " the " + pet1.getDescription() + " German Shepperd.");
+                System.out.println("2. " + pet2.getName() + " the " + pet2.getDescription() + " Australian Terrier.");
+                System.out.println("3. " + pet3.getName() + " the " + pet3.getDescription() + " St. Bernard.");
+                System.out.println("4. " + pet4.getName() + " the " + pet4.getDescription() + " Siberian Husky");
+                String userPlayOption = scanner.nextLine();
+                System.out.println("You can take" + userPlayOption + "to the park.");
+                shelterPets.actionPlayWithPet(userPlayOption);
 
-                // return true if animal is in shelter
+                // returns true if animal is in shelter
             } else if (userResponse == 4) {
                 System.out.println("You have selected to adopt a lifelong companion." + "\n" +
-                        "What furry friend would you like to give a new home to?");
-               String userInput = scanner.nextLine();
-               shelterPets.adoptPet(userInput);
-                System.out.println("You adopted " + userInput);
+                        "What furry friend would you like to take home?");
+                String userInput = scanner.nextLine();
+                shelterPets.adoptPet(userInput);
+                System.out.println("\n" + "Congrats! You adopted " + userInput + " as your new pet." + "\n");
             } else if (userResponse == 5) {
-                System.out.println("You have selected to intake a dog.Who's our new furry friend?");
-                String userInput =  scanner.nextLine();          // java if waiting for user input
-                System.out.println("What's the new dog like?");
-                String userDescription =  scanner.nextLine();
-                VirtualPet newPet = new VirtualPet(userInput, userDescription, 50 ,50 ,50);
+                System.out.println("You have selected to bring in a dog. What's the name of our new furry friend?");
+                String userInput = scanner.nextLine();          // java is waiting for user input
+                System.out.println("How would you describe the dog? (ex.breed and attributes)");
+                String userDescription = scanner.nextLine();
+                VirtualPet newPet = new VirtualPet(userInput, userDescription, 50, 50, 50);
                 shelterPets.addPet(newPet);
-
+                System.out.println("Thank you " + userInput + " is now part of our shelter!" + "\n");
             } else if (userResponse == 6) {
-                System.out.println( "You have selected to exit game. Have a good day.");
+                System.out.println("Thank you for volunteering at The Doggy Shelter, have a good day.");
                 break;
+            } else {
+                continue;
             }
-
+            shelterPets.tickAll();   //call to tick method in VirtualPetShelter
         }
     }
+
 }
+
 
 

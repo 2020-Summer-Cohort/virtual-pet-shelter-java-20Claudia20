@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class VirtualPetShelter {
 
-    Map<String, VirtualPet> petMap = new HashMap<String, VirtualPet>();
+    Map<String, VirtualPet> petMap = new HashMap<>();
 
     public void addPet(VirtualPet pet) {
         petMap.put(pet.getName(), pet);
@@ -27,7 +27,11 @@ public class VirtualPetShelter {
         }
     }
 
-    // set up tick method (does this call for each pet and update needs?)
+    public void actionPlayWithPet(String petName) {
+        petMap.get(petName);
+    }
+
+    // set up tick method
     public void tickAll() {
         for (VirtualPet petToTick : petMap.values())
             petToTick.tick();
