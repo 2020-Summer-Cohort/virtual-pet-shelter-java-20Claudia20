@@ -47,7 +47,7 @@ public class VirtualPetShelterApp {
             System.out.println("5. Admit a pet");
             System.out.println("6. Quit");
 
-            Scanner scanner = new Scanner(System.in);    //use scanner to read user response
+            Scanner scanner = new Scanner(System.in);
             int userResponse = scanner.nextInt();      // 'int userResponse' to create a spot for users input
             scanner.nextLine();
 
@@ -88,7 +88,7 @@ public class VirtualPetShelterApp {
             } else {
                 continue;
             }
-            shelterPets.tickAll();   //call to tick method in VirtualPetShelter
+            shelterPets.tickAll();
         }
     }
 
