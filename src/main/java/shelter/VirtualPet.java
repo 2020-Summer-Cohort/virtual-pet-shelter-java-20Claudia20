@@ -31,26 +31,24 @@ public class VirtualPet {
     public String getDescription() {
         return description;
     }
-
     public int getHunger() {
         return hunger;
     }
-
     public int getThirst() {
         return thirst;
     }
-
-    public int getBoredom() {
+    public int getBoredom()
+    {
         return boredom;
     }
 
     // methods to update game stats based on UserOption
     public void actionFeedAnimals() {
-        hunger += 5;
+        hunger -= 5;
     }
 
     public void actionGiveWaterToAnimals() {
-        thirst += 5;
+        thirst -= 5;
     }
 
     public void actionPlayWithAPet() {
@@ -59,8 +57,8 @@ public class VirtualPet {
 
 
     void tick() {
-        hunger = hunger -= 2;
-        thirst = thirst -= 2;
-        boredom = boredom -= 2;
+        hunger = hunger += 2;
+        thirst = thirst += 2;
+        boredom = boredom += 2;
     }
 }

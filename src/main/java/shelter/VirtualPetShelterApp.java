@@ -6,10 +6,10 @@ public class VirtualPetShelterApp {
     public static void main(String[] args) {
 
         //create objects
-        VirtualPet pet1 = new VirtualPet("Dexter", "clever", 50, 50, 50);
-        VirtualPet pet2 = new VirtualPet("Bono", "ferocious", 50, 50, 50);
-        VirtualPet pet3 = new VirtualPet("Morty", "messy", 50, 50, 50);
-        VirtualPet pet4 = new VirtualPet("Leia", "energetic", 50, 50, 50);
+        VirtualPet pet1 = new VirtualPet("Dexter", "clever", 30, 30, 30);
+        VirtualPet pet2 = new VirtualPet("Bono", "ferocious", 30, 30, 30);
+        VirtualPet pet3 = new VirtualPet("Morty", "messy", 30, 30, 30);
+        VirtualPet pet4 = new VirtualPet("Leia", "energetic", 30, 30, 30);
 
         //create shelterPet (petMap) to interact with all pets at once
         VirtualPetShelter shelterPets = new VirtualPetShelter();
@@ -18,7 +18,7 @@ public class VirtualPetShelterApp {
         shelterPets.addPet(pet3);
         shelterPets.addPet(pet4);
 
-        //Welcome statement (do we need to move to a welcome method and call?)
+        //Welcome statement
         System.out.println("Welcome and thank you for volunteering at The Doggy Virtual Pet Shelter!");
         System.out.println("Let's meet the dogs you will be working with." + "\n");
         System.out.println(pet1.getName() + " is a " + pet1.getDescription() + " German Shepperd." + "\n");
@@ -48,7 +48,6 @@ public class VirtualPetShelterApp {
             System.out.println("6. Quit");
 
             Scanner scanner = new Scanner(System.in);    //use scanner to read user response
-
             int userResponse = scanner.nextInt();      // 'int userResponse' to create a spot for users input
             scanner.nextLine();
 
@@ -69,7 +68,6 @@ public class VirtualPetShelterApp {
                 System.out.println("You can take" + userPlayOption + "to the park.");
                 shelterPets.actionPlayWithPet(userPlayOption);
 
-                // returns true if animal is in shelter
             } else if (userResponse == 4) {
                 System.out.println("You have selected to adopt a lifelong companion." + "\n" +
                         "What furry friend would you like to take home?");
@@ -81,11 +79,11 @@ public class VirtualPetShelterApp {
                 String userInput = scanner.nextLine();          // java is waiting for user input
                 System.out.println("How would you describe the dog? (ex.breed and attributes)");
                 String userDescription = scanner.nextLine();
-                VirtualPet newPet = new VirtualPet(userInput, userDescription, 50, 50, 50);
+                VirtualPet newPet = new VirtualPet(userInput, userDescription);
                 shelterPets.addPet(newPet);
                 System.out.println("Thank you " + userInput + " is now part of our shelter!" + "\n");
             } else if (userResponse == 6) {
-                System.out.println("Thank you for volunteering at The Doggy Shelter, have a good day.");
+                System.out.println("Thank you for visiting The Doggy Shelter, have a good day.");
                 break;
             } else {
                 continue;
