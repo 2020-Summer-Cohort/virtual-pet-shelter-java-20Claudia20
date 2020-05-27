@@ -1,6 +1,14 @@
 package shelter;
 import java.util.Scanner;
 
+// Not too far off but we'd like for you to make a couple changes.
+// - Lines 34-37 print your pets but are hard coded to the 4 pets you create at the beginning of the program
+// this makes it so when we add pets or remove them, the program does not give the user an accurate representation
+// of the state of the program, or see the effect of their actions. Try using a for loop like you have in lines
+// 29 and 30 to print
+// to print.
+// - Bonus points if you can clean up your while loop and move your print statements to their own methods within this class
+
 public class VirtualPetShelterApp {
     public static void main(String[] args) {
 
