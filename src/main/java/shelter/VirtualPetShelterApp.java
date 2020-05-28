@@ -1,4 +1,5 @@
 package shelter;
+
 import java.util.Scanner;
 
 // Not too far off but we'd like for you to make a couple changes.
@@ -34,13 +35,12 @@ public class VirtualPetShelterApp {
         while (true) {
 
             System.out.println("\n" + "This is the status of our furry friends:");
-            System.out.println("Name    |Hunger |Thirst	|Boredom");
-            System.out.println("--------|-------|-------|-------");
-            System.out.println(pet1.getName() + "  |" + pet1.getHunger() + "     |" + pet1.getThirst() + "     |" + pet1.getBoredom());
-            System.out.println(pet2.getName() + "    |" + pet2.getHunger() + "     |" + pet2.getThirst() + "     |" + pet2.getBoredom());
-            System.out.println(pet3.getName() + "   |" + pet3.getHunger() + "     |" + pet3.getThirst() + "     |" + pet3.getBoredom());
-            System.out.println(pet4.getName() + "    |" + pet4.getHunger() + "     |" + pet4.getThirst() + "     |" + pet4.getBoredom());
-
+            System.out.println("\n" + " Hunger|Thirst|Boredom");
+            System.out.println("------------------------");
+            for (VirtualPet petToDisplay : shelterPets.retrieveAllPets()) {
+                System.out.println(petToDisplay.getName() + ": " + petToDisplay.getHunger() + " | " + petToDisplay.getThirst()
+                        + " | " + petToDisplay.getBoredom());
+            }
             System.out.println("\n" + "What would you like to do?");
             System.out.println("1. Feed all the dogs");
             System.out.println("2. Give water to all the dogs");
@@ -88,8 +88,8 @@ public class VirtualPetShelterApp {
             shelterPets.tickAll();
         }
     }
-
 }
+
 
 
 
